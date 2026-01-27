@@ -9,7 +9,7 @@ services:
     volumes:
       - /home/vitaly/projects/product_test:/var/www/html
     environment:
-      PHP_IDE_CONFIG: serverName=product_catalog-docker
+      PHP_IDE_CONFIG: serverName=product_test-docker
       DB_CONNECTION: pgsql
       DB_HOST: db
       DB_PORT: 5432
