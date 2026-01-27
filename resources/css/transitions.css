@@ -1,0 +1,60 @@
+/*
+|--------------------------------------------------------------------------
+| Page / Card transitions
+|--------------------------------------------------------------------------
+*/
+
+.page-appear-from,
+.page-enter-from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+}
+
+.page-appear-to,
+.page-enter-to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.page-appear-active,
+.page-enter-active {
+    transition: all 0.35s ease;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Grid item (Product cards)
+|--------------------------------------------------------------------------
+*/
+
+.card-enter-from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+}
+
+.card-enter-to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.card-enter-active {
+    transition: all 0.3s ease;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Optional fade (errors, hints)
+|--------------------------------------------------------------------------
+*/
+
+.fade-enter-from {
+    opacity: 0;
+}
+
+.fade-enter-to {
+    opacity: 1;
+}
+
+.fade-enter-active {
+    transition: opacity 0.2s ease;
+}

@@ -9,12 +9,21 @@ use App\Http\Controllers\Api\AuthController;
 // аутентификация
 Route::post('/login', [AuthController::class, 'login']);
 
-// Публичные эндпоинты
+/*
+|--------------------------------------------------------------------------
+| Публичные эндпоинты
+|--------------------------------------------------------------------------
+*/
 Route::get('/products', [ProductController::class, 'index']);
 Route::get('/products/{product}', [ProductController::class, 'show']);
 Route::get('/categories', [CategoryController::class, 'index']);
 
-// Эндпоинты требующие аутентификации
+
+/*
+|--------------------------------------------------------------------------
+| Эндпоинты требующие аутентификации
+|--------------------------------------------------------------------------
+*/
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/products', [ProductController::class, 'store']);
     Route::put('/products/{product}', [ProductController::class, 'update']);
