@@ -1,6 +1,6 @@
 <script setup>
-defineProps(['modelValue'])
-defineEmits(['update:modelValue'])
+    defineProps(['modelValue'])
+    defineEmits(['update:modelValue'])
 </script>
 
 <template>
@@ -14,3 +14,4 @@ defineEmits(['update:modelValue'])
 <style scoped>
 
 </style>
+
