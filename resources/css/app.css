@@ -1,1 +1,18 @@
+/* Tailwind v4 импорты */
 @import "tailwindcss";
+
+/* Можно добавить кастомные стили после */
+.custom-class {
+    @apply bg-blue-500 text-white p-4 rounded;
+}
+
+/* Или прямо тут расширить Tailwind */
+@layer utilities {
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+}

@@ -83,6 +83,7 @@ export function useProductList({ initialPage = 1 } = {}) {
                 await loadProducts()
 
             } catch (e) {
+                alert('Ошибка удаления товара')
                 console.error('Ошибка удаления товара', e)
             }
 

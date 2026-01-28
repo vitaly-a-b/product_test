@@ -49,6 +49,7 @@ const validate = () => {
 }
 
 const submit = async () => {
+
     if (!validate())
         return
 
@@ -57,11 +58,16 @@ const submit = async () => {
     try {
         if (isEdit.value) {
             await updateProduct(props.product.id, form.value)
+
         } else {
             await createProduct(form.value)
         }
 
         router.visit('/admin/products')
+    }
+    catch(e){
+        alert(isEdit.value ? 'Товар не отредактирован' : 'Товар не создан')
+        console.error('Ошибка при редактировании или создания товара', e)
 
     } finally {
         loading.value = false
@@ -178,11 +184,11 @@ onMounted(async () => {
                             type="button"
                             @click="$inertia.visit('/admin/products')"
                         >
-                            Cancel
+                            Отменить
                         </Button>
 
                         <Button :disabled="loading"  type="submit">
-                            {{ loading ? 'Saving...' : 'Save' }}
+                            {{ loading ? 'Сохранение...' : 'Сохранить' }}
                         </Button>
                     </div>
                 </form>

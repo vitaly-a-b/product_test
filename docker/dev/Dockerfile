@@ -24,10 +24,10 @@ RUN pecl install xdebug \
     && docker-php-ext-enable xdebug
 
 # Xdebug config
-COPY ./docker/php/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
+COPY ./docker/dev/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 
 # Entrypoint
-COPY ./docker/php/entrypoint.sh /usr/local/bin/entrypoint.sh
+COPY ./docker/dev/entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
 WORKDIR /var/www/html

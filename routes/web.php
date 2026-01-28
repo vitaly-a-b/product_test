@@ -2,6 +2,19 @@
 
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\DB;
+
+
+//Laravel healthcheck endpoint
+Route::get('/health', function () {
+    return response()->json([
+        'status' => 'ok',
+        'db' => DB::connection()->getPdo() ? 'ok' : 'fail',
+    ]);
+});
+
+
+
 
 
 /*
@@ -60,3 +73,9 @@ Route::prefix('admin')->group(function () {
 Route::fallback(function () {
     return redirect()->route('home');
 });
+
+
+
+
+
+

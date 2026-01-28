@@ -19,9 +19,6 @@ else
   echo "✅ Node.js зависимости уже установлены"
 fi
 
-# Права (важно для Laravel)
-#chown -R www-data:www-data storage bootstrap/cache
-
 # Создание символьной ссылки public/storage -> storage/app/public
 if [ ! -L public/storage ]; then
   echo "🔗 Создаём символическую ссылку public/storage → storage/app/public"
